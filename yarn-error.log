@@ -1,0 +1,62 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Users\Jixer\AppData\Local\Android\Sdk\AndroidSDK\platform-tools;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\curl-7.66.0-win64-mingw\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\Erfaa\AppData\Local\Microsoft\WindowsApps;C:\Users\Erfaa\AppData\Roaming\npm;C:\Users\Erfaa\AppData\Local\Android\sdk\platform-tools;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Users\Erfaa\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Erfaa\AppData\Local\Android\sdk\tools;C:\Program Files\MongoDB\Server\4.2\bin;C:\Users\Erfaa\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: E:\Jixer\Coding\2019\react-native\TwitterClone\server\package.json: Unexpected token } in JSON at position 180
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "cross-env NODE_ENV=dev nodemon --exec babel-node src/index.js",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "apollo-server-express": "^2.9.7",
+      "bcrypt-nodejs": "0.0.3",
+      "body-parser": "^1.19.0",
+      "cross-env": "^6.0.3",
+      "express": "^4.17.1",
+      "faker": "^4.1.0",
+      "graph-tools": "^0.1.2",
+      "graphql": "^14.5.8",
+      "graphql-date": "^1.0.3",
+      "graphql-tools": "^4.0.6",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.7.6",
+      "nodemon": "^1.19.4"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-preset-env": "^1.7.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
