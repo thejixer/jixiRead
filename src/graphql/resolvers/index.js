@@ -61,7 +61,6 @@ export default {
     getUserFollowers: UserResolver.getUserFollowers,
     getUserFollowings: UserResolver.getUserFollowings,
     getSavedArticles: ArticleResolver.getSavedArticles,
-    test: utilityResolver.test
   },
   Mutation: {
     createArticle: ArticleResolver.createArticle,

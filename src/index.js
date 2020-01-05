@@ -14,9 +14,10 @@ import resolvers from './graphql/resolvers';
 import { decodeToken } from './services/auth';
 
 
-// EVERY REQUEST TRIGERS THIS
+// EVERY REQUEST TRIGERS THIS SINCE THIS IS A MIDDLEWARE
 // THIS TAKES OUR TOKEN AND RETURNS THE USER OBJECT REQUESTING THE ACTION
 // AND SETS IT TO CONTEXT OBJECT AS REQ.USER
+// THE NEXT SIMPLY MEANS IT'S NOT OVER, GO TO THE NEXT MIDDLEWARE
 async function auth(req,res, next) {
   try {
     const token = req.headers.authorization;
@@ -59,15 +60,11 @@ server.applyMiddleware({ app, path: constants.GRAPHQL_PATH });
 // CREATING OUR HTTP SERVER
 const httpServer = createServer(app)
 // THIS IS FOR SUBSCRIPTION PURPUSES
+// SINCE I'M NOT USING GRAPHQL SUBSCRIPTIONS THIS IS COMMENTED FOR NOW
 // server.installSubscriptionHandlers(httpServer);
 
 
 // STARTING THE SERVER
-// mocks().then(() => {
-  httpServer.listen(constants.PORT, () => {
-    console.log(`Apollo Server on http://localhost:${constants.PORT}/graphql`);
-  })
-// })
-
-
-
+httpServer.listen(constants.PORT, () => {
+  console.log(`Apollo Server on http://localhost:${constants.PORT}/graphql`);
+})

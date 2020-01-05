@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import constants from '../config/constants';
 import User from '../models/User';
 
-//  VALIDATE THE USER REQUESTING THE MUTATION 
+//  VALIDATE THE USER REQUESTING THE MUTATION OR QUERY
 export async function requireAuth(user) {
 
   if (!user || !user._id) {

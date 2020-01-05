@@ -101,7 +101,6 @@ export default`
     getUserFollowers(_id: ID!) : [Follower]
     getUserFollowings(_id: ID!) : [Follower]
     getSavedArticles: [SavedArticle]
-    test: Int!
   }
 
   type Mutation {

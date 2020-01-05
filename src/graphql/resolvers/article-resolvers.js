@@ -8,12 +8,13 @@ import { ArticlePictureUpload } from '../../services/upload'
 // The Comments may be a little confusing so I will try my best to clarify things
 // the Requesting User is The Client 
 // The Requested User or the Target User is the User that the client is Requesting its data
-// Requested Article is Obvious
+// Requested Article is self explanatory
 // When I use Current User/Article/item/etc. Usually it's in an iteretion and I'm refering to the iterated User/Article/etc.
 
 
 export default {
-  getArticle: async (_,{_id}, {user}) => {
+  // get A specefic Article using the given Id from Query Arguments
+  getArticle: async (_, { _id }, { user }) => {
     try {
       // check if the user is Authenticated
       const ME = await requireAuth(user)
@@ -46,6 +47,7 @@ export default {
       throw error
     }
   },
+  // get All Articles Submited by the Target User ( the given _id argument is the id of a user)
   getUserArticles: async (_,{_id}, {user}) => {
     try {
       // check if the user is Authenticated
@@ -69,6 +71,7 @@ export default {
       throw error
     }
   },
+  // this creates a new Article 
   createArticle: async (_, {tags,Picture, ...rest}, {user}) => {
     try {
       // check if the user is Authenticated
@@ -100,6 +103,7 @@ export default {
       throw error
     }
   },
+  // this Updates the Target Article
   updateArticle: async (_,{_id, ...rest}, {user}) => {
     try {
       // check if the user is Authenticated
@@ -120,6 +124,7 @@ export default {
       throw error
     }
   },
+  // this deletes the Target Article 
   deleteArticle: async (_, {_id}, {user}) => {
     try {
       // check if the user is Authenticated
@@ -167,6 +172,8 @@ export default {
       throw error;
     }
   },
+  // this lets users add reviews on the Articles 
+  // it gets _id of the article and review Text + point int ( 1-5 ) 
   addReview: async (_, { _id, review, point }, { user }) => {
     try {
       // check if the user is Authenticated
@@ -204,7 +211,8 @@ export default {
       throw error
     }
   },
-  getSelectedArticlesbyTags: async (_, args, {user}) => {
+  // gets All Articles that the Requesting User is intrested (has followed the tag )
+  getSelectedArticlesbyTags: async (_, args, { user }) => {
     try {
       // check if the user is Authenticated
       const ME = await requireAuth(user);
@@ -249,6 +257,7 @@ export default {
       throw error
     }
   },
+  // Gets All articles of the Users that The Requesting User has followed 
   getSelectedArticlesByUsers: async (_, args, { user }) => {
     try {
       // check if the user is Authenticated
@@ -277,6 +286,7 @@ export default {
       throw error
     }
   },
+  // gets Articles By a Specefic Tag
   getArticlesBySpeceficTag: async (_, {tag}, {user}) => {
     try {
       // check if the user is Authenticated
@@ -300,6 +310,7 @@ export default {
       throw error
     }
   },
+  // Handles bookmark Click
   HandleSaveArticle: async (_, { _id }, { user }) => {
     try {
       // check if the user is Authenticated
@@ -323,6 +334,7 @@ export default {
       throw error
     }
   },
+  // get the Articles that the Requesting User has Bookmarked 
   getSavedArticles: async (_, args, {user}) => {
     try {
       // check if the user is Authenticated
