@@ -1,3 +1,6 @@
+// PS: This is My First Project so forgive me if it is a little fuzzy
+// PS: I appreciate any Constructive Critism (Mail: Jixerm4n@gmail.com || discord : Jixerm4n#6397)
+
 import express from 'express';
 import { createServer } from 'http';
 import { ApolloServer } from 'apollo-server-express';
