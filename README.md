@@ -1,5 +1,5 @@
 An Article Reading Mobile App with React Native as Front End & Node JS on the back end.
-here are the technologies used in the back end  :
+here are the technologies used in the back end  : /n
 NodeJS
 express
 Mongoose
